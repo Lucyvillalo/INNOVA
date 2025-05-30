@@ -1,0 +1,370 @@
+/* HEADER CORREGIDO */
+header {
+  background: #000000;
+  color: #fff;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: #000;
+  color: aqua;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1100; /* <-- Asegura que esté por encima del carrusel */
+}
+
+/* LOGO VISUAL */
+.navbar .logo img {
+  height: 70px;          /* Alto mayor para que se vea bien */
+  max-height: 80px;      /* Límite en pantallas grandes */
+  width: auto;
+  object-fit: contain;   /* Mantiene la proporción */
+  display: block;
+}
+
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: aqua;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  color: #00ffff;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8em;
+  cursor: pointer;
+  color: aqua;
+}
+
+/* Responsive NAVBAR */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    padding: 15px;
+    border: 1px solid aqua;
+    border-radius: 8px;
+    display: none;
+    z-index: 2000; /* <-- Muy por encima del carrusel */
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu li {
+    margin-bottom: 10px;
+  }
+
+  .nav-menu li:last-child {
+    margin-bottom: 0;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000000;
+  color: #333;
+}
+  
+  
+  /* ===================== */
+  /* ==== SECCIONES ====== */
+  /* ===================== */
+  
+  .productos-section,
+  .nosotros-section,
+  .contacto-section {
+    padding: 60px 20px;
+    background: white;
+    text-align: center;
+  }
+  
+  .productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+  }
+  
+  .producto {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .producto img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: contain;
+  }
+  
+ 
+  
+ 
+
+
+/* Botón circular de compra */
+.btn-compra.circular {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #25D366;  /* Verde característico de WhatsApp */
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  position: relative;
+}
+
+/* Efecto hover: aumenta ligeramente la escala, cambia el fondo y activa animación */
+.btn-compra.circular:hover {
+  background-color: #1ebe5f;
+  animation: pulse 1s infinite;
+}
+
+/* Keyframes para el efecto pulse */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.categorias-tecnologia {
+  padding: 30px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.categorias-tecnologia h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.categorias-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.categoria-item {
+  width: 120px;
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+
+.categoria-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #02060a;
+  padding: 10px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.categoria-item:hover {
+  transform: scale(1.05);
+}
+
+.categoria-item p {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+
+section, .section {
+  margin: 100px 0; /* margen vertical grande para separar secciones */
+  padding: 50px 30px; /* padding interno amplio */
+}
+
+/* ===== Sección carrusel con fondo animado ===== */
+.galeria-carrusel {
+  max-width: 1300px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #00ffee, #81d9ff, #5d4037);
+
+  background-size: 400% 400%;
+  animation: fondoAnimado 15s ease infinite;
+  overflow: hidden;
+}
+
+@keyframes fondoAnimado {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.galeria-carrusel h2 {
+  font-size: 2.8em;
+  color: #fff;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Carrusel contenedor ===== */
+.carrusel-fotos {
+  display: flex;
+  overflow-x: auto;
+  gap: 25px;
+  padding: 15px 0;
+  scroll-behavior: smooth;
+  scrollbar-height: thin;
+}
+
+/* ===== Scrollbar personalizada ===== */
+.carrusel-fotos::-webkit-scrollbar {
+  height: 10px;
+}
+.carrusel-fotos::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+.carrusel-fotos::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+/* ===== Ítems de video ===== */
+.carrusel-item-video {
+  flex: 0 0 auto;
+  width: 480px;
+  height: 270px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  background-color: #000;
+}
+
+.carrusel-item-video:hover {
+  transform: scale(1.05);
+}
+
+.carrusel-item-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  border-radius: 15px;
+}
+
+/* ===== Responsive (tablet) ===== */
+@media (max-width: 992px) {
+  .carrusel-item-video {
+    width: 360px;
+    height: 202px;
+  }
+
+  .galeria-carrusel h2 {
+    font-size: 2.2em;
+  }
+}
+
+/* ===== Responsive (móvil) ===== */
+@media (max-width: 600px) {
+  .carrusel-item-video {
+    width: 280px;
+    height: 158px;
+  }
+
+  .galeria-carrusel h2 {
+    font-size: 1.8em;
+  }
+
+  .carrusel-fotos {
+    gap: 15px;
+  }
+}
+.galeria-carrusel h2 {
+  text-align: center;
+  font-size: 2.5em;
+  color: #04eeff;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 8px #000;
+  font-family: 'Cinzel', serif; /* Tipografía tipo histórica */
+  position: relative;
+  padding: 10px 20px;
+  display: inline-block;
+  border: 2px solid #005b75;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  animation: iluminarTexto 5s ease-in-out infinite alternate;
+}
+
+@keyframes iluminarTexto {
+  0% {
+    box-shadow: 0 0 10px #34dbd3, 0 0 20px #000 inset;
+  }
+  100% {
+    box-shadow: 0 0 20px #34dbd3, 0 0 30px #000 inset;
+  }
+}
+.galeria-carrusel h2 .icon-left svg,
+.galeria-carrusel h2 .icon-right svg {
+  filter: drop-shadow(1px 1px 1px #000);
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+.galeria-carrusel h2:hover .icon-left svg {
+  transform: rotate(-10deg) scale(1.1);
+}
+
+.galeria-carrusel h2:hover .icon-right svg {
+  transform: rotate(10deg) scale(1.1);
+}

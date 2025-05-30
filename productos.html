@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Innovacion 2020</title>
+  <!-- Reset básico -->
+  <link href="style_productos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+ 
+</head>
+
+<body>
+
+
+ <header>
+    <nav class="navbar">
+ <div class="logo">
+  <a href="index.html"><img src="assets/img/logo.png" alt="Logo de la tienda"></a>
+</div>
+
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="productos.html">Productos</a></li>
+      <li><a href="ofertas.html">Ofertas</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+  </header>
+
+
+
+    
+
+
+
+  
+ <!-- ======= Productos botones circulares que te lleven a otra pagina de los productos ======= -->
+
+ <section class="categorias-tecnologia">
+  <h2>Categorías de Tecnología</h2>
+  <div class="categorias-grid">
+    <a href="pantallas.html" class="categoria-item">
+      <img src="assets/img/telefonos.jpeg" alt="Pantallas">
+      <p>Telefonos</p>
+    </a>
+    <a href="laptops.html" class="categoria-item">
+      <img src="assets/img/i3lenovo.jpeg" alt="Laptops">
+      <p>Laptops</p>
+    </a>
+    <a href="zona-gamer.html" class="categoria-item">
+      <img src="assets/img/game.jpeg" alt="Zona gaming">
+      <p>Zona gaming</p>
+    </a>
+    <a href="accesorios.html" class="categoria-item">
+      <img src="assets/img/acesorios.jpeg" alt="Accesorios">
+      <p>Accesorios</p>
+    </a>
+    <a href="impresoras.html" class="categoria-item">
+      <img src="assets/img/imp.jpeg" alt="Impresoras">
+      <p>Impresoras</p>
+    </a>
+    <a href="software.html" class="categoria-item">
+      <img src="assets/img/sof.jpeg" alt="Software">
+      <p>Software</p>
+    </a>
+   
+  </div>
+</section>
+ <!-- Carrusel 2 -->
+  <section class="galeria-carrusel">
+  <h2>
+    <span class="icon-left"></span>
+    Productos
+    <span class="icon-right" aria-hidden="true"></span>
+  </h2>
+
+  <div class="carrusel-fotos">
+    <div class="carrusel-item-video">
+      <iframe src="https://www.youtube.com/embed/ZPUvw4BQM_k?si=OOCn6PSzyWGwlxlh" title="Video 1" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen style="width: 100%; height: 100%; border-radius: 15px;"></iframe>
+    </div>
+
+    <div class="carrusel-item-video">
+      <iframe src="https://www.youtube.com/embed/xRWEEnsETK0?si=bn672DLUSDQn9Y28" title="Video 2" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen style="width: 100%; height: 100%; border-radius: 15px;"></iframe>
+    </div>
+
+    <div class="carrusel-item-video">
+      <iframe src="https://www.youtube.com/embed/JJeJwhH2iOU?si=fhdpAH3-LHokxwhO" title="Video 3" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen style="width: 100%; height: 100%; border-radius: 15px;"></iframe>
+    </div>
+  </div>
+
+</section>
+
+</body>
+  <script>
+    
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('nav-menu');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  });
+
+
+    const slides = document.querySelectorAll('.slide');
+    let current = 0;
+
+    function showNextSlide() {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }
+
+    setInterval(showNextSlide, 10000); // Cambia cada 10s
+
+</script>
+
+</html>
